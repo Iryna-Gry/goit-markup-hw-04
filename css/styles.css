@@ -138,32 +138,50 @@ p {
   display: flex;
   margin-left: auto;
 }
-.contacts > .item + .item {
+.contacts > .contact-item + .contact-item {
   margin-left: 50px;
 }
 
-.contacts .link {
+.contacts .contact-link {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
 
-  display: block;
+  display: flex;
+  align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
 }
-.contacts .link:hover,
-.contacts .link:focus {
+.contact-icon {
+  fill: var(--primary-text-color);
+  margin-right: 10px;
+}
+.contact-link:hover,
+.contact-icon:focus {
   color: var(--accent-color);
+}
+.contact-link:hover .contact-icon
+.contact-link:focus .contact-icon {
+  fill: var(--accent-color);
 }
 /* ------------------Main--------------------- */
 
 /* -------------------------Hero ------------------------*/
 .hero {
   background-color: var(--dark-bg-color);
+  height: 600px;
+    max-width: 1600px;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)),
+      url(../images/hero-image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .hero-title {
   font-weight: 900;
@@ -210,6 +228,9 @@ p {
 .features > .item:not(:last-child) {
   margin-right: 30px;
 }
+.features>.item::before {
+  background-image: url(../images/icons.svg);
+}
 .features .title {
   font-weight: 700;
   font-size: 14px;
@@ -245,7 +266,6 @@ p {
 }
 .team.list {
   display: flex;
-
 }
 .team-card img {
   display: block;
@@ -279,6 +299,31 @@ p {
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
+  margin-bottom: 16px;
+}
+.member-soc {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.member-soc-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.member-soc-icon {
+  fill: #afb1b8;
+}
+.member-soc-link:hover,
+.member-soc-link:focus {
+  background-color: var(--accent-color);
+}
+.member-soc-link:hover .member-soc-icon,
+.member-soc-link:focus .member-soc-icon {
+  fill: var(--tertiary-text-color);
 }
 /* -------------------------Footer ------------------------*/
 .footer {
@@ -287,13 +332,17 @@ p {
   padding-top: 60px;
   padding-bottom: 60px;
 }
+.footer-container {
+  display: flex;
+  gap: 70px;
+}
 .address {
   font-style: normal;
 
   margin-top: 20px;
 }
 .address-item:not(:last-child) {
-margin-bottom: 9px;
+  margin-bottom: 9px;
 }
 .footer-address {
   line-height: 1.71;
@@ -309,6 +358,48 @@ margin-bottom: 9px;
 .footer-contact:focus {
   color: var(--accent-color);
 }
+.footer-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--tertiary-text-color);
+  margin-bottom: 20px;
+}
+.footer-soc-links {
+  padding-top: 10px;
+}
+.footer-soc {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.footer-soc-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-soc-icon {
+  fill: var(--tertiary-text-color);
+}
+
+.footer-soc-link:hover,
+.footer-soc-link:focus {
+  background-color: var(--accent-color);
+}
+
+.footer-soc-link:hover .footer-soc-icon,
+.footer-soc-link:focus .footer-soc-icon {
+  fill: var(--tertiary-text-color);
+}
+
 /* -------------------------Portfolio page ------------------------*/
 .list.button-list {
   margin-bottom: 50px;
