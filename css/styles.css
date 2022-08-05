@@ -291,10 +291,7 @@ p {
   margin-right: 30px;
 }
 .team-member {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 30px 32px;
 }
 .team .title {
   font-weight: 500;
